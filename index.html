@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume - Mohd Shahjad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      background: #f0f8ff;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.dark {
+      background: #1e1e1e;
+      color: #ddd;
+    }
+    header {
+      background: linear-gradient(to right, #74ebd5, #acb6e5);
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    header img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: #dfe9f3;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    nav a {
+      color: #2c3e50;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #0077cc;
+    }
+    .toggle-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #fff;
+      color: #2c3e50;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    section {
+      padding: 2rem;
+      max-width: 800px;
+      margin: 1.5rem auto;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+    body.dark section {
+      background: #2a2a2a;
+    }
+    .skills ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+    }
+    .skills li {
+      background: #bae6fd;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    body.dark .skills li {
+      background: #444;
+      color: #eee;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: linear-gradient(to right, #74ebd5, #acb6e5);
+      color: #fff;
+      margin-top: 2rem;
+      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+    }
+    @media (max-width: 600px) {
+      header, section, footer, nav {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button class="toggle-btn" onclick="document.body.classList.toggle('dark')">Toggle Dark Mode</button>
+    <img src="https://via.placeholder.com/100" alt="Mohd Shahjad">
+    <h1>MOHD SHAHJAD</h1>
+    <p>Software Engineer</p>
+    <p>Gurgaon, India | +91 8218-444-622 | mrshahjad001@gmail.com | LinkedIn</p>
+  </header>
+
+  <nav>
+    <a href="#summary">Summary</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#additional">More Info</a>
+  </nav>
+
+  <section id="summary">
+    <h2>Professional Summary</h2>
+    <p>Results-oriented Software Developer with 3+ years of experience in backend development, distributed systems, and cloud-native applications. Adept in Java, Spring Boot, Microservices, and RESTful APIs. Proven track record in building scalable payment and logistics systems. Strong knowledge of MySQL, MongoDB, AWS services (EC2, S3), and secure authentication methods (JWT, SSL/TLS). Seeking opportunities in Ireland under the Critical Skills Employment Permit (CSEP) category.</p>
+  </section>
+
+  <section class="skills" id="skills">
+    <h2>Technical Skills</h2>
+    <ul>
+      <li>Java (Advanced)</li>
+      <li>JavaScript</li>
+      <li>Spring Boot</li>
+      <li>Hibernate</li>
+      <li>Spring Security</li>
+      <li>Microservices</li>
+      <li>REST</li>
+      <li>SOAP</li>
+      <li>MySQL</li>
+      <li>MongoDB</li>
+      <li>Oracle (basic)</li>
+      <li>RabbitMQ</li>
+      <li>IntelliJ</li>
+      <li>Eclipse</li>
+      <li>Postman</li>
+      <li>SOAP UI</li>
+      <li>Git</li>
+      <li>AWS (EC2, S3)</li>
+      <li>Maven</li>
+      <li>Gradle</li>
+      <li>JWT</li>
+      <li>SSL/TLS</li>
+    </ul>
+  </section>
+
+  <section id="experience">
+    <h2>Professional Experience</h2>
+    <p><strong>Safexpress — Junior Manager - IT</strong><br>Feb 2025 – Present | India</p>
+    <ul>
+      <li>Delivered custom logistics APIs for L&T, Bosch, Blinkit & Picker.</li>
+      <li>Automated freight workflows, enabling 25% faster processing via Spring Boot & Apache Velocity.</li>
+      <li>Built real-time tracking with MongoDB and automated alerts, reducing support load by 40%.</li>
+      <li>Digitized Proof of Delivery (POD) with OCR, SHA-256 & AWS S3, reducing disputes by 30%.</li>
+      <li>Scaled platform to 50K+ daily API calls using Redis and AWS EC2 Auto Scaling.</li>
+    </ul>
+
+    <p><strong>Pay10 (Bhartipay Services Pvt Ltd) — Software Engineer</strong><br>Feb 2023 – Nov 2024 | India</p>
+    <ul>
+      <li>Engineered RESTful microservices supporting payment transactions for merchants across India.</li>
+      <li>Developed static QR-based payment solutions and onboarding systems using Spring Boot & MongoDB.</li>
+      <li>Enabled asynchronous processing with RabbitMQ, improving throughput and scalability.</li>
+      <li>Deployed services on AWS and ensured high availability and secure communication via JWT.</li>
+    </ul>
+
+    <p><strong>Super Web Technology Pvt Ltd — Java Developer</strong><br>Aug 2021 – Feb 2023 | India</p>
+    <ul>
+      <li>Developed Inventory and Complaint Management Systems using Spring Boot & Microservices.</li>
+      <li>Implemented role-based authentication and multi-branch data handling with MongoDB.</li>
+      <li>Generated real-time reports and deployed services on AWS EC2.</li>
+    </ul>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <p>B.Tech in Computer Science – AKTU University (SRGC), India<br>Aggregate: 75%</p>
+  </section>
+
+  <section id="additional">
+    <h2>Additional Information</h2>
+    <p><strong>Date of Birth:</strong> 17 December 1998</p>
+    <p><strong>Nationality:</strong> Indian</p>
+    <p><strong>Languages:</strong> English, Hindi</p>
+    <p>I hereby declare that the information provided is true to the best of my knowledge.</p>
+  </section>
+
+  <footer>
+    <p>📧 mrshahjad001@gmail.com | 🔗 LinkedIn | 📍 Gurgaon, India</p>
+  </footer>
+</body>
+</html>
