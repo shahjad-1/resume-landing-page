@@ -1,31 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Resume - Mohd Shahjad</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
-      line-height: 1.6;
       background: #f0f8ff;
       color: #333;
       transition: background 0.3s, color 0.3s;
     }
-    body.dark {
-      background: #1e1e1e;
-      color: #ddd;
-    }
+    body.dark { background: #1e1e1e; color: #ddd; }
     header {
       background: linear-gradient(to right, #74ebd5, #acb6e5);
       color: #fff;
-      padding: 2rem;
       text-align: center;
+      padding: 2rem;
       position: relative;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
@@ -35,25 +31,8 @@
       height: 100px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      padding: 1rem;
-      background: #dfe9f3;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    nav a {
-      color: #2c3e50;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color: #0077cc;
-    }
-    .toggle-btn {
+    .toggle-btn, .pdf-btn {
       position: absolute;
-      top: 1rem;
       right: 1rem;
       background: #fff;
       color: #2c3e50;
@@ -63,17 +42,30 @@
       cursor: pointer;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
+    .toggle-btn { top: 1rem; }
+    .pdf-btn { top: 3.5rem; }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      background: #dfe9f3;
+      padding: 1rem;
+    }
+    nav a {
+      font-weight: bold;
+      color: #2c3e50;
+      text-decoration: none;
+    }
+    nav a:hover { color: #0077cc; }
     section {
-      padding: 2rem;
       max-width: 800px;
       margin: 1.5rem auto;
       background: #ffffff;
+      padding: 2rem;
       border-radius: 12px;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     }
-    body.dark section {
-      background: #2a2a2a;
-    }
+    body.dark section { background: #2a2a2a; }
     .skills ul {
       display: flex;
       flex-wrap: wrap;
@@ -85,31 +77,37 @@
       background: #bae6fd;
       padding: 0.5rem 1rem;
       border-radius: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-    body.dark .skills li {
-      background: #444;
-      color: #eee;
+    body.dark .skills li { background: #444; color: #eee; }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
     }
+    form button {
+      padding: 0.75rem 2rem;
+      background: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .error { color: red; font-size: 0.9rem; }
     footer {
       text-align: center;
       padding: 1rem;
       background: linear-gradient(to right, #74ebd5, #acb6e5);
-      color: #fff;
-      margin-top: 2rem;
-      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
-    }
-    @media (max-width: 600px) {
-      header, section, footer, nav {
-        padding: 1rem;
-      }
+      color: white;
     }
   </style>
 </head>
 <body>
   <header>
-    <button class="toggle-btn" onclick="document.body.classList.toggle('dark')">Toggle Dark Mode</button>
-    <img src="https://via.placeholder.com/100" alt="Mohd Shahjad">
+    <button class="toggle-btn" onclick="document.body.classList.toggle('dark')">Dark Mode</button>
+    <button class="pdf-btn" onclick="downloadResumePDF()">Download PDF</button>
+    <img src="https://via.placeholder.com/100" alt="Mohd Shahjad" />
     <h1>MOHD SHAHJAD</h1>
     <p>Software Engineer</p>
     <p>Gurgaon, India | +91 8218-444-622 | mrshahjad001@gmail.com | LinkedIn</p>
@@ -121,14 +119,15 @@
     <a href="#experience">Experience</a>
     <a href="#education">Education</a>
     <a href="#additional">More Info</a>
+    <a href="#contact">Contact</a>
   </nav>
 
-  <section id="summary">
+  <section id="summary" data-aos="fade-up">
     <h2>Professional Summary</h2>
     <p>Results-oriented Software Developer with 3+ years of experience in backend development, distributed systems, and cloud-native applications. Adept in Java, Spring Boot, Microservices, and RESTful APIs. Proven track record in building scalable payment and logistics systems. Strong knowledge of MySQL, MongoDB, AWS services (EC2, S3), and secure authentication methods (JWT, SSL/TLS). Seeking opportunities in Ireland under the Critical Skills Employment Permit (CSEP) category.</p>
   </section>
 
-  <section class="skills" id="skills">
+  <section class="skills" id="skills" data-aos="fade-up">
     <h2>Technical Skills</h2>
     <ul>
       <li>Java (Advanced)</li>
@@ -156,9 +155,9 @@
     </ul>
   </section>
 
-  <section id="experience">
+  <section id="experience" data-aos="fade-up">
     <h2>Professional Experience</h2>
-    <p><strong>Safexpress — Junior Manager - IT</strong><br>Feb 2025 – Present | India</p>
+    <p><strong>Safexpress — Junior Manager - IT</strong><br />Feb 2025 – Present | India</p>
     <ul>
       <li>Delivered custom logistics APIs for L&T, Bosch, Blinkit & Picker.</li>
       <li>Automated freight workflows, enabling 25% faster processing via Spring Boot & Apache Velocity.</li>
@@ -166,29 +165,27 @@
       <li>Digitized Proof of Delivery (POD) with OCR, SHA-256 & AWS S3, reducing disputes by 30%.</li>
       <li>Scaled platform to 50K+ daily API calls using Redis and AWS EC2 Auto Scaling.</li>
     </ul>
-
-    <p><strong>Pay10 (Bhartipay Services Pvt Ltd) — Software Engineer</strong><br>Feb 2023 – Nov 2024 | India</p>
+    <p><strong>Pay10 — Software Engineer</strong><br />Feb 2023 – Nov 2024 | India</p>
     <ul>
-      <li>Engineered RESTful microservices supporting payment transactions for merchants across India.</li>
-      <li>Developed static QR-based payment solutions and onboarding systems using Spring Boot & MongoDB.</li>
-      <li>Enabled asynchronous processing with RabbitMQ, improving throughput and scalability.</li>
-      <li>Deployed services on AWS and ensured high availability and secure communication via JWT.</li>
+      <li>Engineered RESTful microservices for payment transactions.</li>
+      <li>Developed static QR solutions with Spring Boot & MongoDB.</li>
+      <li>Enabled async processing via RabbitMQ.</li>
+      <li>Deployed secure AWS-based services using JWT.</li>
     </ul>
-
-    <p><strong>Super Web Technology Pvt Ltd — Java Developer</strong><br>Aug 2021 – Feb 2023 | India</p>
+    <p><strong>Super Web Technology — Java Developer</strong><br />Aug 2021 – Feb 2023 | India</p>
     <ul>
-      <li>Developed Inventory and Complaint Management Systems using Spring Boot & Microservices.</li>
-      <li>Implemented role-based authentication and multi-branch data handling with MongoDB.</li>
-      <li>Generated real-time reports and deployed services on AWS EC2.</li>
+      <li>Built Inventory and Complaint Management Systems.</li>
+      <li>Implemented role-based auth and multi-branch logic.</li>
+      <li>Deployed to AWS EC2 with reporting modules.</li>
     </ul>
   </section>
 
-  <section id="education">
+  <section id="education" data-aos="fade-up">
     <h2>Education</h2>
-    <p>B.Tech in Computer Science – AKTU University (SRGC), India<br>Aggregate: 75%</p>
+    <p>B.Tech in Computer Science – AKTU University (SRGC), India<br />Aggregate: 75%</p>
   </section>
 
-  <section id="additional">
+  <section id="additional" data-aos="fade-up">
     <h2>Additional Information</h2>
     <p><strong>Date of Birth:</strong> 17 December 1998</p>
     <p><strong>Nationality:</strong> Indian</p>
@@ -196,8 +193,57 @@
     <p>I hereby declare that the information provided is true to the best of my knowledge.</p>
   </section>
 
-  <footer>
+  <section id="contact" data-aos="fade-up">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+      <div class="error" id="formError"></div>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer data-aos="fade-up">
     <p>📧 mrshahjad001@gmail.com | 🔗 LinkedIn | 📍 Gurgaon, India</p>
   </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <script>
+    function downloadResumePDF() {
+      const content = document.body.cloneNode(true);
+      content.querySelector('.toggle-btn').remove();
+      content.querySelector('.pdf-btn').remove();
+      html2pdf().from(content).set({
+        margin: 0.5,
+        filename: 'Mohd_Shahjad_Resume.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+      }).save();
+    }
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const error = document.getElementById('formError');
+
+      if (!name || !email || !message) {
+        error.textContent = 'All fields are required.';
+        return;
+      }
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        error.textContent = 'Please enter a valid email address.';
+        return;
+      }
+
+      error.textContent = '';
+      alert('Message sent successfully!');
+      this.reset();
+    });
+  </script>
 </body>
 </html>
