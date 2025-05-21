@@ -1,117 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resume - Mohd Shahjad</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-  <style>
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      background: #f0f8ff;
-      color: #333;
-      transition: background 0.3s, color 0.3s;
-    }
-    body.dark { background: #1e1e1e; color: #ddd; }
-    header {
-      background: linear-gradient(to right, #74ebd5, #acb6e5);
-      color: #fff;
-      text-align: center;
-      padding: 2rem;
-      position: relative;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-    header img {
-      border-radius: 50%;
-      width: 100px;
-      height: 100px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    .toggle-btn, .pdf-btn {
-      position: absolute;
-      right: 1rem;
-      background: #fff;
-      color: #2c3e50;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    .toggle-btn { top: 1rem; }
-    .pdf-btn { top: 3.5rem; }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      background: #dfe9f3;
-      padding: 1rem;
-    }
-    nav a {
-      font-weight: bold;
-      color: #2c3e50;
-      text-decoration: none;
-    }
-    nav a:hover { color: #0077cc; }
-    section {
-      max-width: 800px;
-      margin: 1.5rem auto;
-      background: #ffffff;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    }
-    body.dark section { background: #2a2a2a; }
-    .skills ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      list-style: none;
-      padding: 0;
-    }
-    .skills li {
-      background: #bae6fd;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-    }
-    body.dark .skills li { background: #444; color: #eee; }
-    form input, form textarea {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-    form button {
-      padding: 0.75rem 2rem;
-      background: #0077cc;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .error { color: red; font-size: 0.9rem; }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: linear-gradient(to right, #74ebd5, #acb6e5);
-      color: white;
-    }
-  </style>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Resume of Mohd Shahjad - Software Engineer specialized in Java and Spring Boot, with experience in fintech and payment gateway systems." />
+    <title>Mohd Shahjad – Software Engineer Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        line-height: 1.6;
+        background: #f0f8ff;
+        color: #333;
+        transition: background 0.3s, color 0.3s;
+      }
+      body.dark {
+        background: #1e1e1e;
+        color: #ddd;
+      }
+      header {
+        background: linear-gradient(to right, #74ebd5, #acb6e5);
+        color: #fff;
+        padding: 2rem;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+      header img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      nav {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+        background: #dfe9f3;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      nav a {
+        color: #2c3e50;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      nav a:hover {
+        color: #0077cc;
+      }
+      .toggle-btn, .pdf-btn {
+        position: absolute;
+        top: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .toggle-btn {
+        right: 11rem;
+        background: #fff;
+        color: #2c3e50;
+      }
+      .pdf-btn {
+        right: 1rem;
+        background: #007bff;
+        color: white;
+      }
+      section {
+        padding: 2rem;
+        max-width: 800px;
+        margin: 1.5rem auto;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      }
+      body.dark section {
+        background: #2a2a2a;
+      }
+      .skills ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        list-style: none;
+        padding: 0;
+      }
+      .skills li {
+        background: #bae6fd;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      body.dark .skills li {
+        background: #444;
+        color: #eee;
+      }
+      footer {
+        text-align: center;
+        padding: 1rem;
+        background: linear-gradient(to right, #74ebd5, #acb6e5);
+        color: #fff;
+        margin-top: 2rem;
+        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+      }
+      @media (max-width: 600px) {
+        header, section, footer, nav {
+          padding: 1rem;
+        }
+      }
+      @media print {
+        .toggle-btn,
+        .pdf-btn {
+          display: none !important;
+        }
+        body {
+          background: white !important;
+          color: black !important;
+        }
+        section {
+          background: white !important;
+          box-shadow: none !important;
+        }
+      }
+
+      /* 3D tilt on profile image */
+header img {
+  transition: transform 0.3s ease;
+}
+header img:hover {
+  transform: rotateY(10deg) rotateX(5deg) scale(1.05);
+}
+
+/* Section card 3D effect */
+section {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+section:hover {
+  transform: translateY(-5px) rotateX(1deg) rotateY(1deg);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+}
+
+/* Fade and scale entrance */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+section {
+  animation: fadeInUp 0.8s ease both;
+}
+
+/* Navigation hover effect */
+nav a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background-color: #0077cc;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: right;
+}
+nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Button hover animation */
+.toggle-btn:hover, .pdf-btn:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+    </style>
+  </head>
 <body>
+  <div id="resume">
   <header>
-    <button class="toggle-btn" onclick="document.body.classList.toggle('dark')">Dark Mode</button>
-    <button class="pdf-btn" onclick="downloadResumePDF()">Download PDF</button>
-    <img src="https://via.placeholder.com/100" alt="Mohd Shahjad" />
-    <h1>MOHD SHAHJAD</h1>
+    <button class="toggle-btn" onclick="document.body.classList.toggle('dark')">🌗 Toggle Dark Mode</button>
+    <button class="pdf-btn" onclick="downloadPDF()">📄 Download PDF</button>
+    <img 
+    src="images/cv_image.jpg" 
+    alt="Mohd Shahjad" 
+    style="
+      border-radius: 50%; 
+      width: 100px; 
+      height: 100px; 
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+      transition: transform 0.4s ease;
+      transform-style: preserve-3d;
+    " 
+    onmouseover="this.style.transform='rotateY(15deg) rotateX(10deg) scale(1.05)'" 
+    onmouseout="this.style.transform='none'" 
+  />
+      <h1>MOHD SHAHJAD</h1>
     <p>Software Engineer</p>
-    <p>Gurgaon, India | +91 8218-444-622 | mrshahjad001@gmail.com | LinkedIn</p>
+    <p>
+      Gurgaon, India |
+      +91 8218-444-622 |
+      <a href="mailto:mrshahjad001@gmail.com">mrshahjad001@gmail.com</a> |
+      <a href="https://www.linkedin.com/in/mohd-shahjad-706976255/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </p>
   </header>
+  
 
   <nav>
     <a href="#summary">Summary</a>
@@ -119,10 +227,9 @@
     <a href="#experience">Experience</a>
     <a href="#education">Education</a>
     <a href="#additional">More Info</a>
-    <a href="#contact">Contact</a>
   </nav>
 
-  <section id="summary" data-aos="fade-up">
+  <section id="summary" >
     <h2>Professional Summary</h2>
     <p>Results-oriented Software Developer with 3+ years of experience in backend development, distributed systems, and cloud-native applications. Adept in Java, Spring Boot, Microservices, and RESTful APIs. Proven track record in building scalable payment and logistics systems. Strong knowledge of MySQL, MongoDB, AWS services (EC2, S3), and secure authentication methods (JWT, SSL/TLS). Seeking opportunities in Ireland under the Critical Skills Employment Permit (CSEP) category.</p>
   </section>
@@ -193,57 +300,41 @@
     <p>I hereby declare that the information provided is true to the best of my knowledge.</p>
   </section>
 
-  <section id="contact" data-aos="fade-up">
-    <h2>Contact Me</h2>
-    <form id="contactForm">
-      <input type="text" id="name" placeholder="Your Name" required />
-      <input type="email" id="email" placeholder="Your Email" required />
-      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
-      <div class="error" id="formError"></div>
-      <button type="submit">Send</button>
-    </form>
-  </section>
 
-  <footer data-aos="fade-up">
-    <p>📧 mrshahjad001@gmail.com | 🔗 LinkedIn | 📍 Gurgaon, India</p>
+  <footer>
+    <p>
+      📧 <a href="mailto:mrshahjad001@gmail.com">mrshahjad001@gmail.com</a> |
+      🔗 <a href="https://www.linkedin.com/in/mohd-shahjad-706976255/" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
+      📍 Gurgaon, India
+    </p>
   </footer>
+  
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script>
-    function downloadResumePDF() {
-      const content = document.body.cloneNode(true);
-      content.querySelector('.toggle-btn').remove();
-      content.querySelector('.pdf-btn').remove();
-      html2pdf().from(content).set({
-        margin: 0.5,
-        filename: 'Mohd_Shahjad_Resume.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-      }).save();
-    }
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
-      const error = document.getElementById('formError');
-
-      if (!name || !email || !message) {
-        error.textContent = 'All fields are required.';
-        return;
-      }
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailPattern.test(email)) {
-        error.textContent = 'Please enter a valid email address.';
-        return;
-      }
-
-      error.textContent = '';
-      alert('Message sent successfully!');
-      this.reset();
+  function downloadPDF() {
+    // Hide the toggle and PDF buttons before generating the PDF
+    const toggleBtn = document.querySelector('.toggle-btn');
+    const pdfBtn = document.querySelector('.pdf-btn');
+    toggleBtn.style.display = 'none';
+    pdfBtn.style.display = 'none';
+ 
+    const resume = document.getElementById('resume');
+    const opt = {
+      margin: 0.5,
+      filename: 'shahjad_resume.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+ 
+    html2pdf().set(opt).from(resume).save().then(() => {
+      // Restore buttons after PDF generation
+      toggleBtn.style.display = 'inline-block';
+      pdfBtn.style.display = 'inline-block';
     });
-  </script>
+  }
+</script>
+    </div>
 </body>
 </html>
